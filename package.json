@@ -1,0 +1,11 @@
+{
+  "name": "animejs-presentation",
+  "version": "1.0.0",
+  "description": "This is an AnimeJS based presentation template",
+  "main": "index.html",
+  "scripts": {
+    "test": "startpresentation"
+  },
+  "author": "Aditya Saxena",
+  "license": "MIT"
+}
