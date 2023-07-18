@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Properties</title>
+  <style>
+    /* CSS Reset and common styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Wrapper for the demonstration */
+    .position-demo-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    /* Specific styles for each position property */
+    .position-demo {
+      width: 400px;
+      height: 300px;
+      border: 2px solid;
+      padding: 20px;
+      margin: 20px;
+      overflow: auto;
+    }
+
+    /* Different border, padding, and margin colors for each div */
+    .static-demo {
+      border-color: red;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .relative-demo {
+      border-color: blue;
+      padding: 30px;
+      margin: 10px;
+    }
+
+    .absolute-demo {
+      border-color: green;
+      padding: 10px;
+      margin: 30px;
+    }
+
+    .fixed-demo {
+      border-color: orange;
+      padding: 15px;
+      margin: 25px;
+    }
+
+    /* Styles for the content */
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="position-demo-container">
+    <!-- Position: static -->
+    <div class="position-demo static-demo">
+      <h2>Position: static</h2>
+      <p>This is the default positioning value for elements. It follows the normal document flow and is not affected by the top, bottom, left, or right properties.</p>
+    </div>
+
+    <!-- Position: relative -->
+    <div class="position-demo relative-demo">
+      <h2>Position: relative</h2>
+      <p>The element is positioned relative to its normal position in the document flow. It can be moved using the top, bottom, left, or right properties without affecting other elements' positions.</p>
+      <p>Child elements with position: absolute will be positioned relative to this element.</p>
+    </div>
+
+    <!-- Position: absolute -->
+    <div class="position-demo absolute-demo">
+      <h2>Position: absolute</h2>
+      <p>The element is taken out of the normal document flow and positioned relative to its closest positioned ancestor (or the viewport if no positioned ancestor is found).</p>
+      <p>It doesn't leave a space in the document flow, and other elements ignore it.</p>
+    </div>
+
+    <!-- Position: fixed -->
+    <div class="position-demo fixed-demo">
+      <h2>Position: fixed</h2>
+      <p>The element is positioned relative to the viewport and stays fixed at its specified position even when scrolling the page.</p>
+      <p>It doesn't leave a space in the document flow and is always visible regardless of scrolling.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+    /* Styling for a container div that holds buttons */
+    .buttons-div {
+        display: flex;
+        width: 100%;
+        justify-content: space-around; /* Center the elements with equal space around them */
+    }
+    
+    /* [CSS for Icon Font] */
+    
+        /* Define custom font for icons */
+        @font-face {
+            /* Set the font family name that will be used to refer to this custom font */
+            font-family: 'fontello';
+        
+            /* Define the source URLs for different font formats */
+            src: url('../fonts/fontello.eot'); /* Embedded OpenType format for IE 8 and below */
+            src: url('../fonts/fontello.eot?#iefix') format('embedded-opentype'), /* Fix for IE 9 and IE 10 */
+                url('../fonts/fontello.woff') format('woff'), /* Web Open Font Format for modern browsers */
+                url('../fonts/fontello.ttf') format('truetype'), /* TrueType font for legacy support */
+                url('../fonts/fontello.svg#fontello') format('svg'); /* SVG format for iOS devices and others */
+        
+            /* Set the font weight and style for the custom font */
+            font-weight: normal;
+            font-style: normal;
+        }
+    
+    /* Select all elements whose class attribute starts with "icon-" */
+    /* Assign the custom font to these elements to display icons */
+    [class*="icon-"] {
+        font-family: 'fontello';
+        font-style: normal;
+        font-size: 3em; /* Set the font size to 3em (3 times the default font size) */
+        speak: none; /* Ensure screen readers do not pronounce icon characters */
+    }
+    
+    /* Define specific icons using their pseudo-element ":after" */
+    .icon-home:after { content: "\2302"; } /* Home icon */
+    .icon-cog:after { content: "\2699"; } /* Cog icon */
+    .icon-cw:after { content: "\27f3"; } /* Clockwise arrow icon */
+    .icon-heart:after { content: "\2665"; } /* Heart icon */
+    .icon-mail:after { content: "\2709"; } /* Mail icon */
+    .icon-paper-plane-empty:after { content: "\f1d9"; } /* Firefox icon */
+    /* Apply CSS box-sizing reset to all elements on the page */
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* [Navigation] */
+    /* Styling for a navigation list */
+    .nav {
+        list-style: none;
+        text-align: center;
+    }
+    
+    /* Styling for list items within the navigation list */
+    .nav li {
+        position: relative;
+        display: inline-block;
+        margin-right: -4px; /* Remove space between inline-block elements */
+    }
+    
+    /* [CSS for Buttons] */
+    
+    /* Styling for anchor elements within the .nav class (buttons) */
+    .nav a {
+        display: block; /* Make the anchor element a block-level element */
+        background-color: #f7f7f7;
+        /* Define gradients for button background using various vendor prefixes */
+        /* Webkit gradient - Safari 4+, Chrome 1-9 */
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+        /* Webkit linear gradient - Safari 5.1+, Chrome 10+ */
+        background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+        /* Mozilla gradient - Firefox 3.6+ */
+        background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+        /* Microsoft gradient - IE 10+ */
+        background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+        /* Opera gradient - Opera 11.10+ */
+        background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+
+        color: #212121; /* Text color */
+        margin: 36px; /* Margin around the buttons */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        text-align: center;
+        line-height: 100px;
+        border-radius: 50%; /* Create circular buttons using border-radius */
+        box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff; /* Box shadow for button */
+    }
+    
+    /* Pseudo-element ":before" to create a border around the buttons */
+    .nav a:before {
+        /* The content property is required for pseudo-elements, but in this case, it will be empty */
+        content: "";
+    
+        /* The pseudo-element is displayed as a block-level element */
+        display: block;
+    
+        /* Background color for the border, set to white */
+        background: #fff;
+    
+        /* Border properties for the top side of the border */
+        border-top: 2px solid #ddd;
+    
+        /* Position the pseudo-element absolutely relative to its containing element (.nav a) */
+        position: absolute;
+    
+        /* Position the pseudo-element above the button */
+        top: -18px; /* Move it 18 pixels above the button */
+    
+        /* Position the pseudo-element to the left of the button */
+        left: -18px; /* Move it 18 pixels to the left of the button */
+    
+        /* Position the pseudo-element below the button */
+        bottom: -18px; /* Move it 18 pixels below the button */
+    
+        /* Position the pseudo-element to the right of the button */
+        right: -18px; /* Move it 18 pixels to the right of the button */
+    
+        /* Set the z-index to -1 to place the pseudo-element behind the button */
+        z-index: -1;
+    
+        /* Create a circular shape for the pseudo-element by using border-radius set to 50% */
+        border-radius: 50%;
+    
+        /* Create an inset shadow effect to give a 3D appearance to the border */
+        box-shadow: inset 0px 8px 48px #ddd;
+    }
+    
+    
+    /* Styling when hovering over the buttons */
+    .nav a:hover {
+        text-decoration: none; /* Remove underline on hover */
+        color: #555; /* Change text color on hover */
+        background: #f5f5f5; /* Change background color on hover */
+    }
+    

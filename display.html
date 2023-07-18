@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Display Properties Examples</title>
+  <style>
+    /* CSS Reset and common styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Common styles for demonstration purposes */
+    .display-demo {
+      margin: 10px;
+      padding: 20px;
+      border: 2px solid #333;
+    }
+
+    /* Specific styles for each display property */
+    .block-demo {
+      display: block;
+    }
+
+    .inline-demo {
+      display: inline;
+    }
+
+    .inline-block-demo {
+      display: inline-block;
+    }
+
+    .flex-demo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .inline-flex-demo {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .grid-demo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .inline-grid-demo {
+      display: inline-grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Display: block -->
+  <div class="display-demo block-demo" style="border-color: red;">
+    <h2>Display: block</h2>
+    <p>Block elements take up the full width available and start on a new line.</p>
+  </div>
+
+  <!-- Display: inline -->
+  <div class="display-demo inline-demo" style="border-color: blue;">
+    <h2>Display: inline</h2>
+    <p>Inline elements only take up as much width as necessary and do not start on a new line.</p>
+  </div>
+
+  <!-- Display: inline-block -->
+  <div class="display-demo inline-block-demo" style="border-color: green;">
+    <h2>Display: inline-block</h2>
+    <p>Inline-block elements are similar to inline elements but can have margins and paddings applied.</p>
+  </div>
+
+  <!-- Display: flex -->
+  <div class="display-demo flex-demo" style="border-color: orange;">
+    <h2>Display: flex</h2>
+    <p>Flex elements are flexible containers that can be easily aligned and arranged.</p>
+    <p>Try resizing the window to see the flex items wrap when the container width is limited.</p>
+  </div>
+
+  <!-- Display: inline-flex -->
+  <div class="display-demo inline-flex-demo" style="border-color: purple;">
+    <h2>Display: inline-flex</h2>
+    <p>Inline-flex elements are similar to flex elements but do not start on a new line.</p>
+    <p>This inline-flex container is centered both horizontally and vertically.</p>
+  </div>
+
+  <!-- Display: grid -->
+  <div class="display-demo grid-demo" style="border-color: brown;">
+    <h2>Display: grid</h2>
+    <p>Grid elements are powerful containers for creating layout structures using rows and columns.</p>
+    <p>This is a grid with three columns.</p>
+  </div>
+
+  <!-- Display: inline-grid -->
+  <div class="display-demo inline-grid-demo" style="border-color: teal;">
+    <h2>Display: inline-grid</h2>
+    <p>Inline-grid elements are similar to grid elements but do not start on a new line.</p>
+    <p>This is an inline-grid with three columns.</p>
+  </div>
+</body>
+</html>

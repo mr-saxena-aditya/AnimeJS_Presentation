@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <g transform="translate(250, 250)">
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#000" stroke-width="8" />
+    <g transform="rotate(0)">
+      <use href="#branch" />
+      <use href="#branch" transform="rotate(90)" />
+      <use href="#branch" transform="rotate(180)" />
+      <use href="#branch" transform="rotate(270)" />
+    </g>
+  </g>
+  <defs>
+    <g id="branch">
+      <path d="M0 0 L0 -160" fill="none" stroke="#000" stroke-width="8" />
+      <g transform="translate(0, -160) rotate(0)">
+        <use href="#subbranch" />
+        <use href="#subbranch" transform="rotate(90)" />
+        <use href="#subbranch" transform="rotate(180)" />
+        <use href="#subbranch" transform="rotate(270)" />
+      </g>
+    </g>
+    <g id="subbranch">
+      <path d="M0 0 L0 -120" fill="none" stroke="#000" stroke-width="8" />
+      <g transform="translate(0, -120) rotate(0)">
+        <use href="#leaf" />
+        <use href="#leaf" transform="rotate(90)" />
+        <use href="#leaf" transform="rotate(180)" />
+        <use href="#leaf" transform="rotate(270)" />
+      </g>
+    </g>
+    <g id="leaf">
+      <path d="M0 0 L0 -80" fill="none" stroke="#000" stroke-width="8" />
+      <path d="M0 -80 L0 -120" fill="none" stroke="#000" stroke-width="8" />
+      <path d="M0 -120 L0 -160" fill="none" stroke="#000" stroke-width="8" />
+      <path d="M0 -160 L10 -180" fill="none" stroke="#000" stroke-width="8" />
+      <path d="M0 -160 L-10 -180" fill="none" stroke="#000" stroke-width="8" />
+    </g>
+  </defs>
+</svg>
