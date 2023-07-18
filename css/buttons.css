@@ -39,7 +39,7 @@
     .icon-cw:after { content: "\27f3"; } /* Clockwise arrow icon */
     .icon-heart:after { content: "\2665"; } /* Heart icon */
     .icon-mail:after { content: "\2709"; } /* Mail icon */
-    .icon-paper-plane-empty:after { content: "\f1d9"; } /* Firefox icon */
+    .icon-paper-plane-empty:after { content: "&#xf1d9"; } /* Firefox icon */
     /* Apply CSS box-sizing reset to all elements on the page */
     * {
         -webkit-box-sizing: border-box;
