@@ -1,242 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Raleway:wght@100;300&display=swap');
+
 /* Global Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  cursor: none !important;
+}
+
+/* Classes and IDs */
+.preloader {
+  /* Styles for preloader element */
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 90vh;
+  background-color: #fff;
+  border-left: #000 solid 5vw; 
+  border-right: #000 solid 5vw;
+  border-bottom: #000 solid 5vh;
+  border-top: #000 solid 5vh;
+  z-index: 999; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 999;
+  opacity: 1; /* Set initial opacity to 1 (visible) */
+  transition: opacity 1s ease; /* Add transition for opacity property */
+}
+
+.hide-preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+/* Add a class to hide the preloader smoothly */
+.preloader .hide {
+    opacity: 0; /* Set opacity to 0 (hidden) */
+    pointer-events: none; /* Disable pointer events on hidden preloader */
+  }
+
+.preloader-inner {
+  /* Styles for preloader-inner element */
+}
+
+.preloader-icon {
+  /* Styles for preloader-icon element */
+}
+
+.preloader-title {
+  /* Styles for preloader-title element */
+  display: block;
+  font-size: 5vw !important;
+  width: 100%;
+  position: relative;
+}
+
+.preloader-subtitle {
+  /* Styles for preloader-subtitle element */
+  display: block;
+  font-size: 2vw !important;
+  width: 100%;
+  position: relative;
+}
+
+.preloader-date {
+  /* Styles for preloader-date element */
+  display: block;
+  font-size: 1.5vw !important;
+  width: 100%;
+  position: relative;
+}
+
+.preloader-contact-card {
+  /* Styles for preloader-contact-card element */
+}
+
+.preloader-contact-card-icon {
+  /* Styles for preloader-contact-card-icon element */
+}
+
+.preloader-contact-card-contact {
+  /* Styles for preloader-contact-card-contact element */
+  display: flex !important;
+}
+
+.preloader-contact-card-name {
+  /* Styles for preloader-contact-card-name element */
+  display: block;
+}
+
+.preloader-contact-card-phone {
+  /* Styles for preloader-contact-card-phone element */
+  width: 50%;
+  padding: 10px !important;
+  box-sizing: border-box;
+}
+
+.preloader-contact-card-email {
+  /* Styles for preloader-contact-card-email element */
+  width: 50%;
+  padding: 10px !important;
+  box-sizing: border-box;
+}
+
+.preloader-progress {
+  /* Styles for preloader-progress element */
+}
+
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  /* Classes and IDs */
-  .preloader {
-    /* Styles for preloader element */
+  .custom-cursor-inner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    background-color: transparent;
+    transition: all 0.3s ease-out; /* Add a smooth transition effect */
   }
   
-  .preloader-inner {
-    /* Styles for preloader-inner element */
+  /* Change the size of .custom-cursor-inner when hovering over a link */
+  a:hover .custom-cursor {
+    width: 30px;
+    height: 30px;
   }
-  
-  .preloader-icon {
-    /* Styles for preloader-icon element */
+
+  a:hover .custom-cursor-inner {
+    width: 30px;
+    height: 30px;
   }
-  
-  .preloader-title {
-    /* Styles for preloader-title element */
-  }
-  
-  .preloader-subtitle {
-    /* Styles for preloader-subtitle element */
-  }
-  
-  .preloader-date {
-    /* Styles for preloader-date element */
-  }
-  
-  .preloader-contact-card {
-    /* Styles for preloader-contact-card element */
-  }
-  
-  .preloader-contact-card-icon {
-    /* Styles for preloader-contact-card-icon element */
-  }
-  
-  .preloader-contact-card-contact {
-    /* Styles for preloader-contact-card-contact element */
-  }
-  
-  .preloader-contact-card-name {
-    /* Styles for preloader-contact-card-name element */
-  }
-  
-  .preloader-contact-card-phone {
-    /* Styles for preloader-contact-card-phone element */
-  }
-  
-  .preloader-contact-card-email {
-    /* Styles for preloader-contact-card-email element */
-  }
-  
-  .preloader-progress {
-    /* Styles for preloader-progress element */
-  }
-  
-  .cursor {
-    /* Styles for cursor element */
-  }
-  
-  .full-screen-menu {
-    /* Styles for full-screen menu element */
-  }
-  
-  .header {
-    /* Styles for header element */
-  }
-  
-  .navbar {
-    /* Styles for navbar element */
-  }
-  
-  .nav-logo {
-    /* Styles for nav-logo element */
-  }
-  
-  .nav-button {
-    /* Styles for nav-button element */
-  }
-  
-  .nav-menu {
-    /* Styles for nav-menu element */
-  }
-  
-  .nav-menu-ul {
-    /* Styles for nav-menu-ul element */
-  }
-  
-  .nav-menu-li {
-    /* Styles for nav-menu-li element */
-  }
-  
-  .nav-menu-a {
-    /* Styles for nav-menu-a element */
-  }
-  
-  .presentation {
-    /* Styles for presentation element */
-  }
-  
-  .presentation-header {
-    /* Styles for presentation-header element */
-  }
-  
-  .presentation-title {
-    /* Styles for presentation-title element */
-  }
-  
-  .presentation-subtitle {
-    /* Styles for presentation-subtitle element */
-  }
-  
-  .presentation-metadata {
-    /* Styles for presentation-metadata element */
-  }
-  
-  .metadata-author {
-    /* Styles for metadata-author element */
-  }
-  
-  .metadata-date {
-    /* Styles for metadata-date element */
-  }
-  
-  .metadata-tags {
-    /* Styles for metadata-tags element */
-  }
-  
-  .slide {
-    /* Styles for slide element */
-  }
-  
-  .slide-animation {
-    /* Styles for slide-animation element */
-  }
-  
-  #slide-animation-1 {
-    /* Styles for slide animation with id slide-animation-1 */
-  }
-  
-  .slide-title {
-    /* Styles for slide title element */
-  }
-  
-  .slide-title-text {
-    /* Styles for slide title text element */
-  }
-  
-  .slide-subtitle {
-    /* Styles for slide subtitle element */
-  }
-  
-  .slide-content {
-    /* Styles for slide content element */
-  }
-  
-  .slide-opening {
-    /* Styles for slide opening element */
-  }
-  
-  .slide-list {
-    /* Styles for slide list element */
-  }
-  
-  .slide-ul {
-    /* Styles for slide ul element */
-  }
-  
-  .slide-ul-item {
-    /* Styles for slide ul item element */
-  }
-  
-  .slide-table {
-    /* Styles for slide table element */
-  }
-  
-  .slide-tr {
-    /* Styles for slide tr element */
-  }
-  
-  .slide-td {
-    /* Styles for slide td element */
-  }
-  
-  .slide-closing {
-    /* Styles for slide closing element */
-  }
-  
-  .presentation-footer {
-    /* Styles for presentation footer element */
-  }
-  
-  .presentation-footer-text {
-    /* Styles for presentation footer text element */
-  }
-  
-  .presentation-controls {
-    /* Styles for presentation controls element */
-  }
-  
-  .presentation-controls-prev {
-    /* Styles for presentation controls prev element */
-  }
-  
-  .presentation-controls-next {
-    /* Styles for presentation controls next element */
-  }
-  
-  .presentation-controls-close {
-    /* Styles for presentation controls close element */
-  }
-  
-  .presentation-controls-play {
-    /* Styles for presentation controls play element */
-  }
-  
-  .presentation-controls-pause {
-    /* Styles for presentation controls pause element */
-  }
-  
-  .presentation-controls-fullscreen {
-    /* Styles for presentation controls fullscreen element */
-  }
-  
-  footer {
-    /* Styles for footer element */
-  }
-  
-  .social-media {
-    /* Styles for social media element */
-  }
-  
-  .social-media-link {
-    /* Styles for social media link element */
-  }
-  
-  /* Add additional styles as needed */
-  
+
+.full-screen-menu {
+  /* Styles for full-screen menu element */
+}
+
+.header {
+  /* Styles for header element */
+}
+
+.navbar {
+  /* Styles for navbar element */
+  width: 100vw;
+  height: fit-content;
+  min-height: 60px !important;
+  background-color: #F0F0F0;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  /* Styles for nav-logo element */
+  width: 15vw;
+  height: 60px;
+  min-width: 15vw;
+  min-height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+.nav-button {
+  /* Styles for nav-button element */
+}
+
+.nav-menu {
+  /* Styles for nav-menu element */
+  width: 85vw;
+  min-width: 85vw;
+  align-items: center;
+  display: flex;
+
+}
+
+.nav-menu-ul {
+  /* Styles for nav-menu-ul element */
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  width: 85vw;
+  min-width: 300px;
+  justify-content: end;
+}
+
+.nav-menu-li {
+  /* Styles for nav-menu-li element */
+  margin-left: 10px;
+  margin-right:10px;
+  text-decoration: none;
+}
+
+.nav-menu-a {
+  /* Styles for nav-menu-a element */
+}
+
+.presentation {
+  /* Styles for presentation element */
+  margin-top: 55px !important;
+  display: block;
+}
+
+.presentation-header {
+  /* Styles for presentation-header element */
+  display: block !important;
+}
+
+.presentation-title {
+  /* Styles for presentation-title element */
+  display: flex !important;
+  font-family: "Montserrat" sans-serif;
+  font-size: 2vw!important;
+  background-color: #B0B0B0;
+  height: 40px !important;
+  min-height: 40px !important;
+  align-items: center;
+  padding-left: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.presentation-subtitle {
+  /* Styles for presentation-subtitle element */
+  display: flex;
+  font-family: "Raleway" sans-serif;
+  font-size: 1vw!important;
+  background-color: #303030;
+  color: #fff;
+  height: 30px !important;
+  min-height: 30px !important;
+  align-items: center;
+  padding-left: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.presentation-metadata {
+  /* Styles for presentation-metadata element */
+  display: inline-flex;
+}
+
+.metadata-author {
+  /* Styles for metadata-author element */
+  width:25vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #B0B0B0;
+  margin: 2px;
+}
+
+.metadata-time{
+  /* Styles for metadata-time element */
+  width: 25vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #B0B0B0;
+  margin: 2px;
+}
+
+#timeDisplay {
+    display: inline;
+}
+
+.metadata-tags {
+  /* Styles for metadata-tags element */
+  width: 50vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #B0B0B0;
+  margin: 2px;
+}
+
+.slide {
+  /* Styles for slide element */
+}
+
+.slide-animation {
+  /* Styles for slide-animation element */
+}
+
+#slide-animation-1 {
+  /* Styles for slide animation with id slide-animation-1 */
+}
+
+.slide-title {
+  /* Styles for slide title element */
+}
+
+.slide-title-text {
+  /* Styles for slide title text element */
+}
+
+.slide-subtitle {
+  /* Styles for slide subtitle element */
+}
+
+.slide-content {
+  /* Styles for slide content element */
+}
+
+.slide-opening {
+  /* Styles for slide opening element */
+}
+
+.slide-list {
+  /* Styles for slide list element */
+}
+
+.slide-ul {
+  /* Styles for slide ul element */
+}
+
+.slide-ul-item {
+  /* Styles for slide ul item element */
+}
+
+.slide-table {
+  /* Styles for slide table element */
+}
+
+.slide-tr {
+  /* Styles for slide tr element */
+}
+
+.slide-td {
+  /* Styles for slide td element */
+}
+
+.slide-closing {
+  /* Styles for slide closing element */
+}
+
+.presentation-footer {
+  /* Styles for presentation footer element */
+  display: flex !important;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  min-width: 100vw;
+  height: fit-content;
+  min-height: 60px !important;
+  left: 0;
+  background-color: #F0F0F0;
+  opacity: 1;
+  z-index: 998;
+}
+
+.presentation-footer-text {
+  /* Styles for presentation footer text element */
+  display: flex;
+  width: 60vw;
+  min-width: 60vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.presentation-controls {
+  /* Styles for presentation controls element */
+  display: flex;
+  width: 40vw;
+  min-width: 40vw;
+  height: fit-content;
+  min-height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: medium;
+}
+
+.presentation-controls-prev {
+  /* Styles for presentation controls prev element */
+}
+
+.presentation-controls-next {
+  /* Styles for presentation controls next element */
+}
+
+.presentation-controls-close {
+  /* Styles for presentation controls close element */
+}
+
+.presentation-controls-play {
+  /* Styles for presentation controls play element */
+}
+
+.presentation-controls-pause {
+  /* Styles for presentation controls pause element */
+}
+
+.presentation-controls-fullscreen {
+  /* Styles for presentation controls fullscreen element */
+}
+
+footer {
+  /* Styles for footer element */
+}
+
+.social-media {
+  /* Styles for social media element */
+}
+
+.social-media-link {
+  /* Styles for social media link element */
+}
+
+/* Add additional styles as needed */
