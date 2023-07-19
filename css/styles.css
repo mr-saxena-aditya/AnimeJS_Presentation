@@ -23,11 +23,10 @@ body {
   border-right: #000 solid 5vw;
   border-bottom: #000 solid 5vh;
   border-top: #000 solid 5vh;
-  z-index: 999; 
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 999;
+  z-index: 1000;
   opacity: 1; /* Set initial opacity to 1 (visible) */
   transition: opacity 1s ease; /* Add transition for opacity property */
 }
@@ -119,7 +118,7 @@ body {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 950;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -133,7 +132,7 @@ body {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 950;
     background-color: transparent;
     transition: all 0.3s ease-out; /* Add a smooth transition effect */
   }
@@ -151,7 +150,34 @@ body {
 
 .full-screen-menu {
   /* Styles for full-screen menu element */
+  position: fixed;
+  top: 60px;
+  bottom: 0px;
+  min-height: 90vh;
+  width: 100vw;
+  z-index: 800;
+  opacity: 0.9;
+  background-color: black;
+  visibility: hidden;
 }
+
+.full-screen-menu.visible {
+    visibility: visible; /* Show the full-screen menu when the 'visible' class is applied */
+  }
+
+  
+  
+  /* Styles for the close button [x] */
+  .full-screen-menu .close-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: red;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
 
 .header {
   /* Styles for header element */
@@ -185,6 +211,70 @@ body {
 
 .nav-button {
   /* Styles for nav-button element */
+  display: flex !important;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 20%;
+  justify-content: center;
+  align-items: center !important;
+}
+
+
+.bar {
+    width: 20px;
+    height: 1px;
+    position: relative  !important;
+    border: solid 1px black; 
+    border-radius: 10px;
+}
+
+.toggle-top {
+    top: 13px;
+    left: 8px;
+    transition: all 0.2s;
+}
+
+.toggle-middle {
+    top: 17px;
+    left: 8px;
+    transition: all 0.2s;
+}
+
+.toggle-bottom {
+    top: 21px;
+    left: 8px;
+    transition: all 0.2s;
+}
+
+.presentation-toggle-wrapper {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.presentation-toggle-wrapper:hover .toggle-middle {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 14px;
+    left: 15px;
+    opacity: 0.3;
+    background-color: navy !important;
+}
+
+.presentation-toggle-wrapper:hover .toggle-top {
+    transform: rotate(45deg);
+    top: 19px;
+    background-color: navy !important;
+}
+
+.presentation-toggle-wrapper:hover .toggle-bottom {
+    transform: rotate(-45deg);
+    top: 8px;
+    background-color: navy !important;
 }
 
 .nav-menu {
@@ -200,7 +290,7 @@ body {
   /* Styles for nav-menu-ul element */
   list-style: none;
   display: flex;
-  width: 85vw;
+  width: 75vw;
   min-width: 300px;
   justify-content: end;
 }
@@ -299,8 +389,10 @@ body {
 
 .slide {
   /* Styles for slide element */
+  margin-top: 10px !important;
   background-color: #E0E0E0;
   height: 100%;
+  min-height: 75vh;
 }
 
 .slide-animation {
@@ -371,7 +463,7 @@ body {
   left: 0;
   background-color: #F0F0F0;
   opacity: 1;
-  z-index: 998;
+  z-index: 700;
 }
 
 .presentation-footer-text {
@@ -444,7 +536,7 @@ footer {
   background-color: #202020;
   color: white;
   opacity: 1;
-  z-index: 998;
+  z-index: 700;
   justify-content: space-around;
   align-items: center !important;
 }

@@ -19,9 +19,8 @@ function hidePreloader() {
     }, 1000);
   });
   
-
-// Function to update date and time
-function updateDateTime() {
+  // Function to update date and time
+  function updateDateTime() {
     const currentDateTime = new Date();
     const hours = String(currentDateTime.getHours()).padStart(2, '0');
     const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
@@ -29,53 +28,51 @@ function updateDateTime() {
     const date = String(currentDateTime.getDate()).padStart(2, '0');
     const month = String(currentDateTime.getMonth() + 1).padStart(2, '0');
     const year = currentDateTime.getFullYear();
-
+  
     const dateTimeDisplay = document.getElementById('dateTimeDisplay');
     dateTimeDisplay.textContent = `${hours}:${minutes}:${seconds} on ${date}-${month}-${year}`;
-    }
-
-    // Update date and time every second
-    setInterval(updateDateTime, 1000);
-
-// Function to update time
-function updateTimeTop() {
+  }
+  
+  // Update date and time every second
+  setInterval(updateDateTime, 1000);
+  
+  // Function to update time for the top display
+  function updateTimeTop() {
     const currentDateTime = new Date();
     const hours = String(currentDateTime.getHours()).padStart(2, '0');
     const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
     const seconds = String(currentDateTime.getSeconds()).padStart(2, '0');
-
+  
     const dateTimeDisplay = document.getElementById('timeDisplayTop');
     dateTimeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-
-    // Update date and time every second
-    setInterval(updateTimeTop, 1000);
-
-// Function to update time
-function updateTimeBottom() {
+  }
+  
+  // Update time for the top display every second
+  setInterval(updateTimeTop, 1000);
+  
+  // Function to update time for the bottom display
+  function updateTimeBottom() {
     const currentDateTime = new Date();
     const hours = String(currentDateTime.getHours()).padStart(2, '0');
     const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
     const seconds = String(currentDateTime.getSeconds()).padStart(2, '0');
-
+  
     const dateTimeDisplay = document.getElementById('timeDisplayBottom');
     dateTimeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-
-    // Update date and time every second
-    setInterval(updateTimeBottom, 1000);
-
-    // Function to create a custom cursor
-    document.addEventListener('mousemove', (e) => {
-        const cursor = document.querySelector('.custom-cursor');
-        cursor.style.left = (e.pageX - 10) + 'px'; // Adjust the offset based on the circle size
-        cursor.style.top = (e.pageY - 10) + 'px'; // Adjust the offset based on the circle size
-      });
-
-
-      
-// Function to simulate typing effect for logo text
-function typeLogo() {
+  }
+  
+  // Update time for the bottom display every second
+  setInterval(updateTimeBottom, 1000);
+  
+  // Function to create a custom cursor
+  document.addEventListener('mousemove', (e) => {
+    const cursor = document.querySelector('.custom-cursor');
+    cursor.style.left = (e.pageX - 10) + 'px'; // Adjust the offset based on the circle size
+    cursor.style.top = (e.pageY - 10) + 'px'; // Adjust the offset based on the circle size
+  });
+  
+  // Function to simulate typing effect for logo text
+  function typeLogo() {
     const logoText = "[ Aditya Saxena ]"; // Replace with your logo text
     const logoElement = document.querySelector('.nav-logo');
     const typingSpeed = 100; // Speed in milliseconds between each letter
@@ -100,47 +97,66 @@ function typeLogo() {
       typeLogo();
     }, 2000); // 2000 milliseconds = 2.0 seconds
   });
-
-
-// Function to make the screen full screen
-const fullscreenIcon = document.getElementById('fullscreen-icon');
-let isFullScreen = false;
-
-fullscreenIcon.addEventListener('click', () => {
-  if (!isFullScreen) {
-    enterFullscreen();
-  } else {
-    exitFullscreen();
+  
+  // Function to make the screen full screen
+  const fullscreenIcon = document.getElementById('fullscreen-icon');
+  let isFullScreen = false;
+  
+  fullscreenIcon.addEventListener('click', () => {
+    if (!isFullScreen) {
+      enterFullscreen();
+    } else {
+      exitFullscreen();
+    }
+  });
+  
+  function enterFullscreen() {
+    const element = document.documentElement || document.body;
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    }
+  
+    isFullScreen = true;
+    fullscreenIcon.innerHTML = '<i class="icon fa fa-compress"></i>';
   }
-});
-
-function enterFullscreen() {
-  const element = document.documentElement || document.body;
-  if (element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if (element.webkitRequestFullscreen) {
-    element.webkitRequestFullscreen();
-  } else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if (element.msRequestFullscreen) {
-    element.msRequestFullscreen();
+  
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  
+    isFullScreen = false;
+    fullscreenIcon.innerHTML = '<i class="icon fa fa-arrows-alt"></i>';
   }
 
-  isFullScreen = true;
-  fullscreenIcon.innerHTML = '<i class="icon fa fa-compress"></i>';
-}
-
-function exitFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
+  
+// Function to toggle the visibility of the full-screen menu
+function toggleMenuVisibility() {
+    const fullScreenMenu = document.querySelector('.full-screen-menu');
+    const isMenuVisible = window.getComputedStyle(fullScreenMenu).visibility === 'visible';
+  
+    // Toggle the visibility based on the current state
+    if (isMenuVisible) {
+      fullScreenMenu.style.visibility = 'hidden';
+    } else {
+      fullScreenMenu.style.visibility = 'visible';
+    }
   }
-
-  isFullScreen = false;
-  fullscreenIcon.innerHTML = '<i class="icon fa fa-arrows-alt"></i>';
-}
+  
+  // Add click event listener to the nav-button
+  const navButton = document.querySelector('.nav-button');
+  navButton.addEventListener('click', toggleMenuVisibility);
+  
+  
