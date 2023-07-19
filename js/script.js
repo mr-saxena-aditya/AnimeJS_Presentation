@@ -140,10 +140,9 @@ function hidePreloader() {
     isFullScreen = false;
     fullscreenIcon.innerHTML = '<i class="icon fa fa-arrows-alt"></i>';
   }
-
   
-// Function to toggle the visibility of the full-screen menu
-function toggleMenuVisibility() {
+  // Function to toggle the visibility of the full-screen menu
+  function toggleMenuVisibility() {
     const fullScreenMenu = document.querySelector('.full-screen-menu');
     const isMenuVisible = window.getComputedStyle(fullScreenMenu).visibility === 'visible';
   
@@ -159,4 +158,72 @@ function toggleMenuVisibility() {
   const navButton = document.querySelector('.nav-button');
   navButton.addEventListener('click', toggleMenuVisibility);
   
-  
+
+  // JavaScript code to handle slide navigation
+
+  const slides = document.querySelectorAll('.slide');
+  let currentSlideIndex = 0;
+
+  function showSlide(slideIndex) {
+    slides.forEach((slide, index) => {
+      if (index === slideIndex) {
+        slide.style.display = 'block';
+      } else {
+        slide.style.display = 'none';
+      }
+    });
+  }
+
+  function showNextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    showSlide(currentSlideIndex);
+  }
+
+  function showPreviousSlide() {
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === 'ArrowRight') {
+      showNextSlide();
+    } else if (event.key === 'ArrowLeft') {
+      showPreviousSlide();
+    }
+  }
+
+  function handlePreviousSlideClick() {
+    showPreviousSlide();
+  }
+
+  function handleNextSlideClick() {
+    showNextSlide();
+  }
+
+  document.addEventListener('keydown', handleKeyPress);
+
+  const prevSlideButton = document.querySelector('.presentation-control.prev a');
+  const nextSlideButton = document.querySelector('.presentation-control.next a');
+
+  prevSlideButton.addEventListener('click', handlePreviousSlideClick);
+  nextSlideButton.addEventListener('click', handleNextSlideClick);
+
+  showSlide(currentSlideIndex); // Show the first slide initially
+
+
+
+  anime({
+    targets: '.morphing-demo .polymorph',
+    points: [
+      { value: [
+        '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369',
+        '70 41 118.574 59.369 111.145 132.631 60.855 84.631 20.426 60.369']
+      },
+      { value: '70 6 119.574 60.369 100.145 117.631 39.855 117.631 55.426 68.369' },
+      { value: '70 57 136.574 54.369 89.145 100.631 28.855 132.631 38.426 64.369' },
+      { value: '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369' }
+    ],
+    easing: 'easeOutQuad',
+    duration: 2000,
+    loop: true
+  });
