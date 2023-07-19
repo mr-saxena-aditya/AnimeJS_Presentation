@@ -1,0 +1,242 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Classes and IDs */
+  .preloader {
+    /* Styles for preloader element */
+  }
+  
+  .preloader-inner {
+    /* Styles for preloader-inner element */
+  }
+  
+  .preloader-icon {
+    /* Styles for preloader-icon element */
+  }
+  
+  .preloader-title {
+    /* Styles for preloader-title element */
+  }
+  
+  .preloader-subtitle {
+    /* Styles for preloader-subtitle element */
+  }
+  
+  .preloader-date {
+    /* Styles for preloader-date element */
+  }
+  
+  .preloader-contact-card {
+    /* Styles for preloader-contact-card element */
+  }
+  
+  .preloader-contact-card-icon {
+    /* Styles for preloader-contact-card-icon element */
+  }
+  
+  .preloader-contact-card-contact {
+    /* Styles for preloader-contact-card-contact element */
+  }
+  
+  .preloader-contact-card-name {
+    /* Styles for preloader-contact-card-name element */
+  }
+  
+  .preloader-contact-card-phone {
+    /* Styles for preloader-contact-card-phone element */
+  }
+  
+  .preloader-contact-card-email {
+    /* Styles for preloader-contact-card-email element */
+  }
+  
+  .preloader-progress {
+    /* Styles for preloader-progress element */
+  }
+  
+  .cursor {
+    /* Styles for cursor element */
+  }
+  
+  .full-screen-menu {
+    /* Styles for full-screen menu element */
+  }
+  
+  .header {
+    /* Styles for header element */
+  }
+  
+  .navbar {
+    /* Styles for navbar element */
+  }
+  
+  .nav-logo {
+    /* Styles for nav-logo element */
+  }
+  
+  .nav-button {
+    /* Styles for nav-button element */
+  }
+  
+  .nav-menu {
+    /* Styles for nav-menu element */
+  }
+  
+  .nav-menu-ul {
+    /* Styles for nav-menu-ul element */
+  }
+  
+  .nav-menu-li {
+    /* Styles for nav-menu-li element */
+  }
+  
+  .nav-menu-a {
+    /* Styles for nav-menu-a element */
+  }
+  
+  .presentation {
+    /* Styles for presentation element */
+  }
+  
+  .presentation-header {
+    /* Styles for presentation-header element */
+  }
+  
+  .presentation-title {
+    /* Styles for presentation-title element */
+  }
+  
+  .presentation-subtitle {
+    /* Styles for presentation-subtitle element */
+  }
+  
+  .presentation-metadata {
+    /* Styles for presentation-metadata element */
+  }
+  
+  .metadata-author {
+    /* Styles for metadata-author element */
+  }
+  
+  .metadata-date {
+    /* Styles for metadata-date element */
+  }
+  
+  .metadata-tags {
+    /* Styles for metadata-tags element */
+  }
+  
+  .slide {
+    /* Styles for slide element */
+  }
+  
+  .slide-animation {
+    /* Styles for slide-animation element */
+  }
+  
+  #slide-animation-1 {
+    /* Styles for slide animation with id slide-animation-1 */
+  }
+  
+  .slide-title {
+    /* Styles for slide title element */
+  }
+  
+  .slide-title-text {
+    /* Styles for slide title text element */
+  }
+  
+  .slide-subtitle {
+    /* Styles for slide subtitle element */
+  }
+  
+  .slide-content {
+    /* Styles for slide content element */
+  }
+  
+  .slide-opening {
+    /* Styles for slide opening element */
+  }
+  
+  .slide-list {
+    /* Styles for slide list element */
+  }
+  
+  .slide-ul {
+    /* Styles for slide ul element */
+  }
+  
+  .slide-ul-item {
+    /* Styles for slide ul item element */
+  }
+  
+  .slide-table {
+    /* Styles for slide table element */
+  }
+  
+  .slide-tr {
+    /* Styles for slide tr element */
+  }
+  
+  .slide-td {
+    /* Styles for slide td element */
+  }
+  
+  .slide-closing {
+    /* Styles for slide closing element */
+  }
+  
+  .presentation-footer {
+    /* Styles for presentation footer element */
+  }
+  
+  .presentation-footer-text {
+    /* Styles for presentation footer text element */
+  }
+  
+  .presentation-controls {
+    /* Styles for presentation controls element */
+  }
+  
+  .presentation-controls-prev {
+    /* Styles for presentation controls prev element */
+  }
+  
+  .presentation-controls-next {
+    /* Styles for presentation controls next element */
+  }
+  
+  .presentation-controls-close {
+    /* Styles for presentation controls close element */
+  }
+  
+  .presentation-controls-play {
+    /* Styles for presentation controls play element */
+  }
+  
+  .presentation-controls-pause {
+    /* Styles for presentation controls pause element */
+  }
+  
+  .presentation-controls-fullscreen {
+    /* Styles for presentation controls fullscreen element */
+  }
+  
+  footer {
+    /* Styles for footer element */
+  }
+  
+  .social-media {
+    /* Styles for social media element */
+  }
+  
+  .social-media-link {
+    /* Styles for social media link element */
+  }
+  
+  /* Add additional styles as needed */
+  
