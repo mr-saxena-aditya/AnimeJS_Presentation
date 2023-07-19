@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[FINAL PRESENTATION]</title>
   <meta name="description" content="Your page description goes here">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="img/favicon.png">
 </head>
@@ -40,7 +41,7 @@
   <div class="full-screen-menu"></div>
   <header class="header">
     <nav class="navbar">
-        <div class="nav-logo">[My Logo]</div>
+        <div class="nav-logo"></div>
         <div class="nav-button"></div>
         <div class="nav-menu">
             <ul class="nav-menu-ul">
@@ -115,12 +116,48 @@
     <div class="presentation-footer">
         <div class="presentation-footer-text">Footer Text</div>
         <div class="presentation-controls">
-            <div class="presentation-control prev">Prev</div>
-            <div class="presentation-control next">Next</div>
-            <div class="presentation-control close">Close</div>
-            <div class="presentation-control play">Play</div>
-            <div class="presentation-control pause">Pause</div>
-            <div class="presentation-control fullscreen">Fullscreen</div>
+            <div class="presentation-control prev">
+                <div class="fixed-div">
+                    <a class="icon-a" title="Previous Slide" href="#">
+                        <i class="icon fa fa-arrow-circle-left"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="presentation-control next">
+                <div class="fixed-div">
+                    <a class="icon-a" title="Next Slide" href="#">
+                        <i class="icon fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="presentation-control close">
+                <div class="fixed-div">
+                    <a class="icon-a" title="Close Tab" href="#">
+                        <i class="icon fa fa-window-close "></i>
+                    </a>
+                </div>
+            </div>
+            <div class="presentation-control play">
+                <div class="fixed-div">
+                    <a class="icon-a" title="Play Presenter Notes" href="#">
+                        <i class="icon fa-solid fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="presentation-control pause">
+                <div class="fixed-div">
+                    <a class="icon-a" title="Full Screen" href="#">
+                        <i class="icon fa-solid fa-pause"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="presentation-control fullscreen">
+                <div class="fixed-div">
+                    <a class="icon-a" title="Full Screen" href="#">
+                        <i class="icon fa fa-arrows-alt"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
   </main>
@@ -137,5 +174,6 @@
 
   <script src="js/script.js"></script>
   <script src="node_modules/animejs/lib/anime.min.js"></script>
+  
 </body>
 </html>

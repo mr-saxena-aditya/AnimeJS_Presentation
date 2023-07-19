@@ -71,3 +71,32 @@ function updateTimeBottom() {
         cursor.style.left = (e.pageX - 10) + 'px'; // Adjust the offset based on the circle size
         cursor.style.top = (e.pageY - 10) + 'px'; // Adjust the offset based on the circle size
       });
+
+
+      
+// Function to simulate typing effect for logo text
+function typeLogo() {
+    const logoText = "[ Aditya Saxena ]"; // Replace with your logo text
+    const logoElement = document.querySelector('.nav-logo');
+    const typingSpeed = 100; // Speed in milliseconds between each letter
+    let charIndex = 0;
+    let typingInterval;
+  
+    function typeNextChar() {
+      if (charIndex < logoText.length) {
+        logoElement.textContent += logoText.charAt(charIndex);
+        charIndex++;
+      } else {
+        clearInterval(typingInterval); // Stop the typing animation
+      }
+    }
+  
+    typingInterval = setInterval(typeNextChar, typingSpeed);
+  }
+  
+  // Call the typeLogo function after a delay of 5 seconds
+  window.addEventListener('load', function() {
+    setTimeout(() => {
+      typeLogo();
+    }, 2000); // 2000 milliseconds = 2.0 seconds
+  });
