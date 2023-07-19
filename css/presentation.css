@@ -105,7 +105,7 @@
 }
 
 .presentation-toggle-wrapper:hover .toggle-bottom {
-    transform: rotate(135deg);
+    transform: rotate(-45deg);
     top: 50%;
     background-color: navy !important;
 }
@@ -121,19 +121,19 @@
 .toggle-top {
     top: 22.5%;
     left: 17.5%;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 
 .toggle-middle {
     top: 48%;
     left: 17.5%;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 
 .toggle-bottom {
     top: 72.5%;
     left: 17.5%;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 
 /* Media query for smaller screens */
