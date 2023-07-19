@@ -51,10 +51,23 @@ function updateTime() {
     // Update date and time every second
     setInterval(updateTime, 1000);
 
+// Function to update time
+function updateTime2() {
+    const currentDateTime = new Date();
+    const hours = String(currentDateTime.getHours()).padStart(2, '0');
+    const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
+    const seconds = String(currentDateTime.getSeconds()).padStart(2, '0');
+
+    const dateTimeDisplay = document.getElementById('timeDisplayBottom');
+    dateTimeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Update date and time every second
+    setInterval(updateTime2, 1000);
+
     // Function to create a custom cursor
     document.addEventListener('mousemove', (e) => {
         const cursor = document.querySelector('.custom-cursor');
         cursor.style.left = (e.pageX - 10) + 'px'; // Adjust the offset based on the circle size
         cursor.style.top = (e.pageY - 10) + 'px'; // Adjust the offset based on the circle size
       });
-      

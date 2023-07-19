@@ -197,7 +197,6 @@ body {
 .nav-menu-ul {
   /* Styles for nav-menu-ul element */
   list-style: none;
-  text-decoration: none;
   display: flex;
   width: 85vw;
   min-width: 300px;
@@ -208,11 +207,11 @@ body {
   /* Styles for nav-menu-li element */
   margin-left: 10px;
   margin-right:10px;
-  text-decoration: none;
 }
 
 .nav-menu-a {
   /* Styles for nav-menu-a element */
+  color: black; /* Set the text color to black */
 }
 
 .presentation {
@@ -258,6 +257,7 @@ body {
 .presentation-metadata {
   /* Styles for presentation-metadata element */
   display: inline-flex;
+  width: 100vw !important;
 }
 
 .metadata-author {
@@ -266,7 +266,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #B0B0B0;
-  margin: 2px;
+  margin: 1px;
 }
 
 .metadata-time{
@@ -275,7 +275,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #B0B0B0;
-  margin: 2px;
+  margin: 1px;
 }
 
 #timeDisplay {
@@ -284,15 +284,17 @@ body {
 
 .metadata-tags {
   /* Styles for metadata-tags element */
-  width: 50vw;
+  width: 41vw;
   padding-left: 20px;
   padding-right: 20px;
   background-color: #B0B0B0;
-  margin: 2px;
+  margin: 1px;
 }
 
 .slide {
   /* Styles for slide element */
+  background-color: #E0E0E0;
+  height: 65vh;
 }
 
 .slide-animation {
@@ -355,7 +357,7 @@ body {
   /* Styles for presentation footer element */
   display: flex !important;
   position: fixed;
-  bottom: 0;
+  bottom: 60px !important;
   width: 100vw;
   min-width: 100vw;
   height: fit-content;
@@ -387,7 +389,19 @@ body {
   font-size: medium;
 }
 
-.presentation-controls-prev {
+.presentation-control {
+    /* Styles for presentation control element */
+    margin-left: 10px;
+    margin-right: 10px;
+    border: black solid 1px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.prev {
   /* Styles for presentation controls prev element */
 }
 
@@ -413,10 +427,28 @@ body {
 
 footer {
   /* Styles for footer element */
+  /* Styles for presentation footer element */
+  display: flex !important;
+  position: fixed;
+  bottom: 0!important;
+  width: 100vw;
+  min-width: 100vw;
+  height: fit-content;
+  min-height: 50px !important;
+  left: 0;
+  background-color: #202020;
+  color: white;
+  opacity: 1;
+  z-index: 998;
+  justify-content: space-around;
+  align-items: center !important;
 }
 
 .social-media {
   /* Styles for social media element */
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center !important;
 }
 
 .social-media-link {
@@ -424,3 +456,36 @@ footer {
 }
 
 /* Add additional styles as needed */
+/* [Link Hover Animation] */
+
+/* Set the link to be positioned relative to its normal position */
+a {
+    position: relative;
+    color: #000; /* Set the default color of the link */
+    text-decoration: none; /* Remove the default underline from the link */
+  }
+  
+  /* When hovering over the link, change the color to #000 (black) */
+  a:hover {
+    color: #000;
+  }
+  
+  /* Create a pseudo-element (::before) to represent the underline */
+  a::before {
+    content: ""; /* Empty content to create the pseudo-element */
+    position: absolute; /* Position the pseudo-element relative to the link */
+    display: block; /* Display the pseudo-element as a block element */
+    width: 100%; /* Set the width of the pseudo-element to 100% of the link */
+    height: 2px; /* Set the height of the underline */
+    bottom: 0; /* Position the underline at the bottom of the link */
+    left: 0; /* Position the underline at the left of the link */
+    background-color: #000; /* Set the background color of the underline to #000 (black) */
+    transform: scaleX(0); /* Initially, set the underline width to 0, so it's not visible */
+    transition: transform 0.3s ease; /* Add a smooth transition effect for the transform property */
+  }
+  
+  /* When hovering over the link, expand the underline horizontally (scaleX(1)) */
+  a:hover::before {
+    transform: scaleX(1);
+  }
+  
