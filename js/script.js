@@ -38,21 +38,21 @@ function updateDateTime() {
     setInterval(updateDateTime, 1000);
 
 // Function to update time
-function updateTime() {
+function updateTimeTop() {
     const currentDateTime = new Date();
     const hours = String(currentDateTime.getHours()).padStart(2, '0');
     const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
     const seconds = String(currentDateTime.getSeconds()).padStart(2, '0');
 
-    const dateTimeDisplay = document.getElementById('timeDisplay');
+    const dateTimeDisplay = document.getElementById('timeDisplayTop');
     dateTimeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
     }
 
     // Update date and time every second
-    setInterval(updateTime, 1000);
+    setInterval(updateTimeTop, 1000);
 
 // Function to update time
-function updateTime2() {
+function updateTimeBottom() {
     const currentDateTime = new Date();
     const hours = String(currentDateTime.getHours()).padStart(2, '0');
     const minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
@@ -63,7 +63,7 @@ function updateTime2() {
     }
 
     // Update date and time every second
-    setInterval(updateTime2, 1000);
+    setInterval(updateTimeBottom, 1000);
 
     // Function to create a custom cursor
     document.addEventListener('mousemove', (e) => {

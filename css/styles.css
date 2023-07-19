@@ -278,7 +278,11 @@ body {
   margin: 1px;
 }
 
-#timeDisplay {
+#timeDisplayTop {
+    display: inline;
+}
+
+#timeDisplayBottom {
     display: inline;
 }
 
