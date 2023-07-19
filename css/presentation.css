@@ -1,0 +1,148 @@
+
+
+.presentation-navbar-top {
+    display: flex;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+    background-color: #E0E0E0;
+}
+
+.my-logo {
+    display: flex; 
+    width: 100px;
+    height: 60px;
+    min-width: 100px;
+    min-height: 60px;
+    border: 1px solid black; 
+    position: relative;
+    top: 5px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    margin: 0 auto; 
+}
+
+.presentation-metadata {
+    display: flex;
+    width: 60vw;
+    height: 60px;
+    min-width: 100px;
+    min-height: 60px;
+    border: 1px solid black;
+    position: relative;
+    top: 5px !important;
+    margin: 0 auto; /* Center horizontally */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+}
+
+.presentation-nav-links {
+    display: flex;
+    width: 30vw;
+    height: 60px;
+    min-width: 100px;
+    min-height: 60px;
+    border: 1px solid black; 
+    position: relative;
+    top: 5px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.presentation-nav-list {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    list-style-type: none;
+    border: 1px solid black; 
+}
+
+.presentation-nav-list-item {
+    display: flex; 
+    border: 1px solid black; 
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    width: 80px;
+    min-width: 80px;
+}
+
+.presentation-toggle-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 20%;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 40px -7px;
+    border: solid 1px black;
+}
+
+.presentation-toggle-wrapper:hover .toggle-middle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 30%;
+    left: 30%;
+    opacity: 0.3;
+    background-color: navy !important;
+}
+
+.presentation-toggle-wrapper:hover .toggle-top {
+    transform: rotate(45deg);
+    top: 50%;
+    background-color: navy !important;
+}
+
+.presentation-toggle-wrapper:hover .toggle-bottom {
+    transform: rotate(135deg);
+    top: 50%;
+    background-color: navy !important;
+}
+
+.bar {
+    width: 80px;
+    height: 10px;
+    position: absolute;
+    border: solid 2px black; 
+    border-radius: 10px;
+}
+
+.toggle-top {
+    top: 22.5%;
+    left: 17.5%;
+    transition: all 0.5s;
+}
+
+.toggle-middle {
+    top: 48%;
+    left: 17.5%;
+    transition: all 0.5s;
+}
+
+.toggle-bottom {
+    top: 72.5%;
+    left: 17.5%;
+    transition: all 0.5s;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .presentation-nav-list {
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .presentation-nav-list-item {
+    margin: 5px 0; /* Add some vertical spacing between stacked items */
+  }
+}

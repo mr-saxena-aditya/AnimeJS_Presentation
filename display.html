@@ -31,10 +31,12 @@
 
     .inline-demo {
       display: inline;
+      width: 40vw;
     }
 
     .inline-block-demo {
       display: inline-block;
+      margin: 30px;
     }
 
     .flex-demo {
@@ -73,8 +75,24 @@
 
   <!-- Display: inline -->
   <div class="display-demo inline-demo" style="border-color: blue;">
-    <h2>Display: inline</h2>
+    <h2>Display: inline 1</h2>
     <p>Inline elements only take up as much width as necessary and do not start on a new line.</p>
+  </div>
+
+  <!-- Display: inline -->
+  <div class="display-demo inline-demo" style="border-color: blue;">
+    <h2>Display: inline 2</h2>
+    <p>This inline has 2 block elements p and h2 inside and hence behaves like a block element.</p>
+  </div>
+
+  <!-- Display: inline -->
+  <div class="display-demo inline-demo" style="border-color: blue;">
+    this inline-3 does not have any block elements
+  </div>
+
+  <!-- Display: inline -->
+  <div class="display-demo inline-demo" style="border-color: blue;">
+    this inline-4 does not have any block elements
   </div>
 
   <!-- Display: inline-block -->
