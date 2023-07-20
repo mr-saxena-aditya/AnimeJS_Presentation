@@ -1,5 +1,4 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Pacifico&family=Raleway:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Pacifico&family=Raleway:wght@100;300&display=swap');
 
 /* Global Styles */
 body {
@@ -27,21 +26,21 @@ body {
   align-items: center;
   text-align: center;
   z-index: 1000;
-  opacity: 1; /* Set initial opacity to 1 (visible) */
-  transition: opacity 1s ease; /* Add transition for opacity property */
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
 .hide-preloader {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
 
 /* Add a class to hide the preloader smoothly */
 .preloader .hide {
-    opacity: 0; /* Set opacity to 0 (hidden) */
-    pointer-events: none; /* Disable pointer events on hidden preloader */
-  }
+  opacity: 0;
+  pointer-events: none;
+}
 
 .preloader-inner {
   /* Styles for preloader-inner element */
@@ -98,6 +97,7 @@ body {
   width: 50%;
   padding: 10px !important;
   box-sizing: border-box;
+  font-size: 1vw !important;
 }
 
 .preloader-contact-card-email {
@@ -105,79 +105,28 @@ body {
   width: 50%;
   padding: 10px !important;
   box-sizing: border-box;
+  font-size: 1vw!important;
 }
 
 .preloader-progress {
   /* Styles for preloader-progress element */
 }
 
-.custom-cursor {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 950;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .custom-cursor-inner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 950;
-    background-color: transparent;
-    transition: all 0.3s ease-out; /* Add a smooth transition effect */
-  }
-  
-  /* Change the size of .custom-cursor-inner when hovering over a link */
-  a:hover .custom-cursor {
-    width: 30px;
-    height: 30px;
-  }
-
-  a:hover .custom-cursor-inner {
-    width: 30px;
-    height: 30px;
-  }
-
-.full-screen-menu {
-  /* Styles for full-screen menu element */
-  position: fixed;
-  top: 60px;
-  bottom: 0px;
-  min-height: 90vh;
-  width: 100vw;
-  z-index: 800;
-  opacity: 0.9;
-  background-color: black;
-  visibility: hidden;
+.full-screen-menu.visible {
+  visibility: visible; /* Show the full-screen menu when the 'visible' class is applied */
 }
 
-.full-screen-menu.visible {
-    visibility: visible; /* Show the full-screen menu when the 'visible' class is applied */
-  }
-
-  
-  
-  /* Styles for the close button [x] */
-  .full-screen-menu .close-button {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    cursor: pointer;
-    color: #fff;
-    background-color: red;
-    padding: 2px 6px;
-    border-radius: 50%;
-  }
+/* Styles for the close button [x] */
+.full-screen-menu .close-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: red;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
 
 .header {
   /* Styles for header element */
@@ -201,7 +150,7 @@ body {
   /* Styles for nav-logo element */
   width: 15vw;
   height: 60px;
-  min-width: 15vw;
+  min-width: 200px !important;
   min-height: 60px;
   justify-content: space-around;
   align-items: center;
@@ -221,60 +170,59 @@ body {
   align-items: center !important;
 }
 
-
 .bar {
-    width: 20px;
-    height: 1px;
-    position: relative  !important;
-    border: solid 1px black; 
-    border-radius: 10px;
+  width: 20px;
+  height: 1px;
+  position: relative  !important;
+  border: solid 1px black; 
+  border-radius: 10px;
 }
 
 .toggle-top {
-    top: 13px;
-    left: 8px;
-    transition: all 0.2s;
+  top: 13px;
+  left: 8px;
+  transition: all 0.2s;
 }
 
 .toggle-middle {
-    top: 17px;
-    left: 8px;
-    transition: all 0.2s;
+  top: 17px;
+  left: 8px;
+  transition: all 0.2s;
 }
 
 .toggle-bottom {
-    top: 21px;
-    left: 8px;
-    transition: all 0.2s;
+  top: 21px;
+  left: 8px;
+  transition: all 0.2s;
 }
 
 .presentation-toggle-wrapper {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .presentation-toggle-wrapper:hover .toggle-middle {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    top: 14px;
-    left: 15px;
-    opacity: 0.3;
-    background-color: navy !important;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  top: 14px;
+  left: 15px;
+  opacity: 0.3;
+  background-color: navy !important;
 }
 
 .presentation-toggle-wrapper:hover .toggle-top {
-    transform: rotate(45deg);
-    top: 19px;
-    background-color: navy !important;
+  transform: rotate(45deg);
+  top: 19px;
+  background-color: navy !important;
 }
 
 .presentation-toggle-wrapper:hover .toggle-bottom {
-    transform: rotate(-45deg);
-    top: 8px;
-    background-color: navy !important;
+  transform: rotate(-45deg);
+  top: 8px;
+  background-color: navy !important;
 }
 
 .nav-menu {
@@ -283,7 +231,6 @@ body {
   min-width: 85vw;
   align-items: center;
   display: flex;
-
 }
 
 .nav-menu-ul {
@@ -298,7 +245,7 @@ body {
 .nav-menu-li {
   /* Styles for nav-menu-li element */
   margin-left: 10px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
 .nav-menu-a {
@@ -371,11 +318,11 @@ body {
 }
 
 #timeDisplayTop {
-    display: inline;
+  display: inline;
 }
 
 #timeDisplayBottom {
-    display: inline;
+  display: inline;
 }
 
 .metadata-tags {
@@ -392,7 +339,7 @@ body {
   margin-top: 10px !important;
   background-color: #E0E0E0;
   height: 100%;
-  min-height: 75vh;
+  min-height: 65vh;
 }
 
 .slide-animation {
@@ -430,7 +377,7 @@ body {
   /* Styles for slide subtitle element */
   font-family: "Montserrat" sans-serif;
   height: 20px !important;
-  font-size: 15px!important;
+  font-size: 15px !important;
   font-weight: 900;
   letter-spacing: 2px !important;
   text-align: center;
@@ -516,14 +463,14 @@ body {
 }
 
 .presentation-control {
-    /* Styles for presentation control element */
-    margin-left: 10px;
-    margin-right: 10px;
-    min-width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
+  /* Styles for presentation control element */
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
 }
 
 .prev {
@@ -583,17 +530,32 @@ footer {
 
 /* Add additional styles as needed */
 /* [Link Hover Animation] */
-
-/* Set the link to be positioned relative to its normal position */
-a {
+/* Styling for the custom cursor */
+/* Styling for the custom cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 950;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Set the link to be positioned relative to its normal position */
+  a {
     position: relative;
-    color: #000; /* Set the default color of the link */
+    color: #505050; /* Set the default color of the link */
     text-decoration: none; /* Remove the default underline from the link */
   }
   
   /* When hovering over the link, change the color to #000 (black) */
   a:hover {
-    color: #000;
+    color: #202020;
   }
   
   /* Create a pseudo-element (::before) to represent the underline */
@@ -615,47 +577,71 @@ a {
     transform: scaleX(1);
   }
   
-
-  .my-icon {
-    font-size: 25px; /* Set the size of the icon */
-    color: #576574;
-  }
-
-  .icon-a {
+  /* Change the color of the custom cursor when hovering over a link */
+  a:hover + .custom-cursor {
+    border-color: red; /* Change the border color to red */
     width: 30px;
     height: 30px;
-    min-width: 30px;
-    min-height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to right, #f7f7f7, #d7d7d7); /* Define your gradient colors here */
-    box-shadow: 0 0 10px rgba(117, 117, 117, 0.3);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    border-radius: 20%;
+    border-width: 8px;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  
+  
+  
+  
+  .full-screen-menu {
+    /* Styles for full-screen menu element */
+    position: fixed;
+    top: 60px;
+    bottom: 0px;
+    min-height: 90vh;
+    width: 100vw;
+    z-index: 800;
+    opacity: 0.9;
+    background-color: black;
+    visibility: hidden;
   }
 
-  .icon-a:hover {
-      background: linear-gradient(to right, #f7f7f7 0%, #c7c7c7 100%);
-      box-shadow: 0 0 10px rgba(80, 80, 80, 0.2);
-      color: #8395a7;
-  }
+.my-icon {
+  font-size: 25px; /* Set the size of the icon */
+  color: #576574;
+}
 
-  .icon-a:active{
-      background-color: #8395a7;
-      box-shadow: 0 1px #8395a7;
-  }
+.icon-a {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #f7f7f7, #d7d7d7); /* Define your gradient colors here */
+  box-shadow: 0 0 10px rgba(117, 117, 117, 0.3);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 20%;
+}
 
-  .fixed-div {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20%;
-    background-color: #f7f7f7;
-    box-shadow: 0 0 10px rgba(80, 80, 80, 0.2);
-    
-  }
+.icon-a:hover {
+  background: linear-gradient(to right, #f7f7f7 0%, #c7c7c7 100%);
+  box-shadow: 0 0 10px rgba(80, 80, 80, 0.2);
+  color: #8395a7;
+}
+
+.icon-a:active {
+  background-color: #8395a7;
+  box-shadow: 0 1px #8395a7;
+}
+
+.fixed-div {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(80, 80, 80, 0.2);
+}

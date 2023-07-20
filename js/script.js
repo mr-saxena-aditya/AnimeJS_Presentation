@@ -189,15 +189,14 @@ function hidePreloader() {
   
     anime({
       targets: currentSlide,
-      translateY: '20vh', // Corrected to move the slide up 20vh
-      translateX: '40vw', // Corrected to move the slide right 40vh
+      translateY: '20vh', // Corrected to move the slide down 20vh
       scale: 0.5,
-      duration: 1500,
+      duration: 1000,
       easing: 'easeInOutQuad',
       complete: () => {
         currentSlide.style.display = 'none';
         currentSlide.style.transform = 'none';
-        nextSlide.style.transform = 'scale(0.95)'; // or any other scale value
+        nextSlide.style.transform = 'scale(1)'; // or any other scale value
         nextSlide.style.opacity = 1;
         nextSlide.style.display = 'block';
       },
@@ -206,7 +205,7 @@ function hidePreloader() {
     anime({
       targets: nextSlide,
       translateX: ['-100%', '0%'],
-      duration: 1000,
+      duration: 2000,
       easing: 'easeInOutQuad',
     });
   }
@@ -225,45 +224,35 @@ function hidePreloader() {
   document.addEventListener('keydown', handleKeyPress);
   
   // Add click event listener to the next slide button to trigger the slide transition animation
+  const nextSlideButton = document.querySelector('.presentation-control.next .icon-a');
   nextSlideButton.addEventListener('click', () => {
     showNextSlide();
     animateSlideTransition(); // Call the function to animate the slide transition
   });
   
   // Add click event listener to the previous slide button to trigger the slide transition animation
+  const prevSlideButton = document.querySelector('.presentation-control.prev .icon-a');
   prevSlideButton.addEventListener('click', () => {
     showPreviousSlide();
     animateSlideTransition(); // Call the function to animate the slide transition
   });
   
-  showSlide(currentSlideIndex); // Show the first slide initially
+  // Read presenter notes for each slide
+  const presenterNotesButtons = document.querySelectorAll('.icon-a[title="Play Presenter Notes"]');
+  const presenterNotesTexts = document.querySelectorAll('.slide-presenter-notes');
   
-  // ... (previous JavaScript code)
+  presenterNotesButtons.forEach((button, index) => {
+    const presenterNotesText = presenterNotesTexts[index].innerText;
+    button.addEventListener("click", () => {
+      speakText(presenterNotesText);
+    });
+  });
+  
+  function speakText(text) {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+  }
+  
 
-// Function to handle slide navigation for the previous slide
-function handlePreviousSlideClick(event) {
-    event.preventDefault(); // Prevent the default anchor link behavior
-    showPreviousSlide();
-    animateSlideTransition(); // Call the function to animate the slide transition
-  }
-  
-  // Function to handle slide navigation for the next slide
-  function handleNextSlideClick(event) {
-    event.preventDefault(); // Prevent the default anchor link behavior
-    showNextSlide();
-    animateSlideTransition(); // Call the function to animate the slide transition
-  }
-  
-  // Get the previous and next slide anchor elements
-  const prevSlideButton = document.querySelector('.presentation-control.prev .icon-a');
-  const nextSlideButton = document.querySelector('.presentation-control.next .icon-a');
-  
-  // Add click event listeners to the previous and next slide buttons
-  prevSlideButton.addEventListener('click', handlePreviousSlideClick);
-  nextSlideButton.addEventListener('click', handleNextSlideClick);
-  
-  // Show the first slide initially
-  showSlide(currentSlideIndex);
-  
-  // ... (continue with the rest of your JavaScript code)
   
