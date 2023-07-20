@@ -189,15 +189,16 @@ function hidePreloader() {
   
     anime({
       targets: currentSlide,
-      translateY: '-20vh', // Corrected to move the slide up 20vh
-      translateX: '40vh', // Corrected to move the slide right 40vh
-      scale: 0.3,
-      duration: 1000,
+      translateY: '20vh', // Corrected to move the slide up 20vh
+      translateX: '40vw', // Corrected to move the slide right 40vh
+      scale: 0.5,
+      duration: 1500,
       easing: 'easeInOutQuad',
       complete: () => {
         currentSlide.style.display = 'none';
         currentSlide.style.transform = 'none';
-        nextSlide.style.transform = 'none';
+        nextSlide.style.transform = 'scale(0.95)'; // or any other scale value
+        nextSlide.style.opacity = 1;
         nextSlide.style.display = 'block';
       },
     });

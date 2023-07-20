@@ -500,6 +500,7 @@ body {
   min-width: 50vw;
   justify-content: space-around;
   align-items: center;
+  margin-left: 10px !important;
 }
 
 .presentation-controls {
