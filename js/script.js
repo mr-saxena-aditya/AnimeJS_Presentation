@@ -4,17 +4,17 @@ function hidePreloader() {
     preloader.classList.add('hide'); // Add the 'hide' class to start the transition
   
     // After the transition is complete, remove the preloader from the DOM
-    setTimeout(function() {
+    setTimeout(function () {
       preloader.style.display = 'none';
     }, 1000); // Set the timeout to 1 second to match the transition duration
   }
   
   // Create a preloader animation
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
   
     // Hide the preloader after 2 seconds
-    setTimeout(function() {
+    setTimeout(function () {
       hidePreloader();
     }, 1000);
   });
@@ -67,8 +67,8 @@ function hidePreloader() {
   // Function to create a custom cursor
   document.addEventListener('mousemove', (e) => {
     const cursor = document.querySelector('.custom-cursor');
-    cursor.style.left = (e.pageX - 10) + 'px'; // Adjust the offset based on the circle size
-    cursor.style.top = (e.pageY - 10) + 'px'; // Adjust the offset based on the circle size
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
   });
   
   // Function to simulate typing effect for logo text
@@ -92,7 +92,7 @@ function hidePreloader() {
   }
   
   // Call the typeLogo function after a delay of 5 seconds
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     setTimeout(() => {
       typeLogo();
     }, 2000); // 2000 milliseconds = 2.0 seconds
@@ -158,12 +158,11 @@ function hidePreloader() {
   const navButton = document.querySelector('.nav-button');
   navButton.addEventListener('click', toggleMenuVisibility);
   
-
   // JavaScript code to handle slide navigation
-
+  
   const slides = document.querySelectorAll('.slide');
   let currentSlideIndex = 0;
-
+  
   function showSlide(slideIndex) {
     slides.forEach((slide, index) => {
       if (index === slideIndex) {
@@ -173,57 +172,97 @@ function hidePreloader() {
       }
     });
   }
-
+  
   function showNextSlide() {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
     showSlide(currentSlideIndex);
   }
-
+  
   function showPreviousSlide() {
     currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
     showSlide(currentSlideIndex);
   }
-
+  
+  function animateSlideTransition() {
+    const currentSlide = slides[currentSlideIndex];
+    const nextSlide = slides[(currentSlideIndex + 1) % slides.length];
+  
+    anime({
+      targets: currentSlide,
+      translateY: '-20vh', // Corrected to move the slide up 20vh
+      translateX: '40vh', // Corrected to move the slide right 40vh
+      scale: 0.3,
+      duration: 1000,
+      easing: 'easeInOutQuad',
+      complete: () => {
+        currentSlide.style.display = 'none';
+        currentSlide.style.transform = 'none';
+        nextSlide.style.transform = 'none';
+        nextSlide.style.display = 'block';
+      },
+    });
+  
+    anime({
+      targets: nextSlide,
+      translateX: ['-100%', '0%'],
+      duration: 1000,
+      easing: 'easeInOutQuad',
+    });
+  }
+  
+  // Function to handle key press events
   function handleKeyPress(event) {
     if (event.key === 'ArrowRight') {
       showNextSlide();
+      animateSlideTransition(); // Call the function to animate the slide transition
     } else if (event.key === 'ArrowLeft') {
       showPreviousSlide();
+      animateSlideTransition(); // Call the function to animate the slide transition
     }
   }
-
-  function handlePreviousSlideClick() {
-    showPreviousSlide();
-  }
-
-  function handleNextSlideClick() {
-    showNextSlide();
-  }
-
+  
   document.addEventListener('keydown', handleKeyPress);
+  
+  // Add click event listener to the next slide button to trigger the slide transition animation
+  nextSlideButton.addEventListener('click', () => {
+    showNextSlide();
+    animateSlideTransition(); // Call the function to animate the slide transition
+  });
+  
+  // Add click event listener to the previous slide button to trigger the slide transition animation
+  prevSlideButton.addEventListener('click', () => {
+    showPreviousSlide();
+    animateSlideTransition(); // Call the function to animate the slide transition
+  });
+  
+  showSlide(currentSlideIndex); // Show the first slide initially
+  
+  // ... (previous JavaScript code)
 
-  const prevSlideButton = document.querySelector('.presentation-control.prev a');
-  const nextSlideButton = document.querySelector('.presentation-control.next a');
-
+// Function to handle slide navigation for the previous slide
+function handlePreviousSlideClick(event) {
+    event.preventDefault(); // Prevent the default anchor link behavior
+    showPreviousSlide();
+    animateSlideTransition(); // Call the function to animate the slide transition
+  }
+  
+  // Function to handle slide navigation for the next slide
+  function handleNextSlideClick(event) {
+    event.preventDefault(); // Prevent the default anchor link behavior
+    showNextSlide();
+    animateSlideTransition(); // Call the function to animate the slide transition
+  }
+  
+  // Get the previous and next slide anchor elements
+  const prevSlideButton = document.querySelector('.presentation-control.prev .icon-a');
+  const nextSlideButton = document.querySelector('.presentation-control.next .icon-a');
+  
+  // Add click event listeners to the previous and next slide buttons
   prevSlideButton.addEventListener('click', handlePreviousSlideClick);
   nextSlideButton.addEventListener('click', handleNextSlideClick);
-
-  showSlide(currentSlideIndex); // Show the first slide initially
-
-
-
-  anime({
-    targets: '.morphing-demo .polymorph',
-    points: [
-      { value: [
-        '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369',
-        '70 41 118.574 59.369 111.145 132.631 60.855 84.631 20.426 60.369']
-      },
-      { value: '70 6 119.574 60.369 100.145 117.631 39.855 117.631 55.426 68.369' },
-      { value: '70 57 136.574 54.369 89.145 100.631 28.855 132.631 38.426 64.369' },
-      { value: '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369' }
-    ],
-    easing: 'easeOutQuad',
-    duration: 2000,
-    loop: true
-  });
+  
+  // Show the first slide initially
+  showSlide(currentSlideIndex);
+  
+  // ... (continue with the rest of your JavaScript code)
+  
